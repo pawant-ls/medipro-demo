@@ -43,15 +43,16 @@ const Header = () => {
 
               <CButton icon={<Calendar1 />}>Book Now</CButton>
             </nav>
-
-            <CButton
-              onClick={() => {
-                console.log("clicked");
-                setOpen(!open);
-              }}
-            >
-              {open ? <X /> : <Menu />}
-            </CButton>
+            <div className=" md:hidden">
+              <CButton
+                onClick={() => {
+                  console.log("clicked");
+                  setOpen(!open);
+                }}
+              >
+                {open ? <X /> : <Menu />}
+              </CButton>
+            </div>
           </div>
         </div>
       </header>

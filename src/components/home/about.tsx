@@ -91,14 +91,14 @@ const About = () => {
           }}
           className=" order-1  "
         >
-          <div className=" w-1/2 md:w-full">
+          <div className=" w-1/2 md:w-auto">
             <img
               className=" -translate-y-20 rounded-full"
               src="images/about-img-2.jpg"
               alt=""
             />
           </div>
-          <div className=" w-1/2 md:w-full">
+          <div className=" w-1/2 md:w-auto">
             <img
               className=" translate-y-20 rounded-full"
               src="images/about-img-1.jpg"
