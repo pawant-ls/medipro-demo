@@ -84,6 +84,7 @@ const ContactForm = () => {
           <div className="relative">
             <textarea
               name="message"
+              defaultValue={""}
               value={formData.message}
               className="w-full bg-transparent border-b border-gray-300 text-gray-300 py-2 h-32 focus:outline-none focus:border-orange-400 transition-colors resize-none"
               placeholder="Type Your Message"

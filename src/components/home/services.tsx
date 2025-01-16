@@ -1,3 +1,7 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 const data = [
   {
     title: "Eye Care",
@@ -63,17 +67,55 @@ const Services = () => {
 };
 
 export const ServicesCard = ({ item }: any) => {
+  const containerRef = useRef(null);
+  const iconRef = useRef(null);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const ctaRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(
+      [
+        iconRef.current,
+        titleRef.current,
+        descriptionRef.current,
+        ctaRef.current,
+      ],
+      {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "power3.inOut",
+        stagger: 0.2,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+  });
   return (
-    <div className=" border border-primary  ">
+    <div ref={containerRef} className=" border border-primary  ">
       <div className=" p-5">
-        <img src={item.image} alt="" />
-        <h4 className=" text-2xl font-medium text-primary  mt-5 ">
+        <img ref={iconRef} src={item.image} alt="" />
+        <h4
+          ref={titleRef}
+          className=" text-2xl font-medium text-primary  mt-5 "
+        >
           {item.title}
         </h4>
-        <p className="  mt-3 text-gray-600 ">{item.description}</p>
+        <p ref={descriptionRef} className="  mt-3 text-gray-600 ">
+          {item.description}
+        </p>
       </div>
 
-      <div className=" capitalize font-medium text-lg bg-secondary text-white p-3 text-center">
+      <div
+        ref={ctaRef}
+        className=" capitalize font-medium text-lg bg-secondary text-white p-3 text-center"
+      >
         {item.cta}
       </div>
     </div>

@@ -30,10 +30,10 @@ const ContactUsPage = () => {
         }}
         className=" relative w-full h-[400px]"
       >
-        <div className=" bg-primary  text-white absolute left-1/2 -translate-x-1/2 bottom-10 p-5 grid grid-cols-3 gap-5 ">
+        <div className=" bg-primary  text-white absolute left-1/2 -translate-x-1/2 bottom-10 p-5 grid md:grid-cols-3 gap-5 ">
           {data.map((item, i) => (
-            <div key={i} className=" flex flex-col items-center gap-2">
-              <span className=" text-secondary text-xl font-semibold">
+            <div key={i} className=" flex flex-col md:items-center gap-2">
+              <span className=" text-secondary  md:text-xl font-semibold">
                 {" "}
                 {item.type}
               </span>

@@ -3,7 +3,7 @@ import HeadingSection from "../shared/heading-section";
 const WhoWeAre = () => {
   return (
     <section className="  bg-primary py-20 ">
-      <div className=" grid grid-cols-2 gap-10 container">
+      <div className=" grid md:grid-cols-2 gap-10 container">
         <div>
           <img src="images/improving-img.jpg" alt="" />
         </div>

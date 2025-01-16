@@ -37,7 +37,7 @@ Medical Clinic.
         {null}
       </HeadingSection>
 
-      <div className=" grid grid-cols-3 gap-10 h-full">
+      <div className=" grid md:grid-cols-3 gap-10 h-full">
         {data.map((item, i) => (
           <ServicesCard key={i} item={item} />
         ))}

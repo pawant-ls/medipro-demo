@@ -1,6 +1,32 @@
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ChevronsRight } from "lucide-react";
+import { useRef } from "react";
 
 const SharedHeroSection = ({ page }: { page: string }) => {
+  const headingTextRef = useRef(null);
+  const subHeadingTextRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(headingTextRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      ease: "power3.inOut",
+      stagger: 0.2,
+      delay: 0.5,
+    });
+    gsap.from(subHeadingTextRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      ease: "power3.inOut",
+      stagger: 0.2,
+      delay: 0.9,
+    });
+  }, []);
+
   return (
     <section
       //   style={{
@@ -12,9 +38,17 @@ const SharedHeroSection = ({ page }: { page: string }) => {
     >
       <div className=" container py-32  flex text-center items-center justify-center">
         <div className=" z-10 relative  flex flex-col items-center justify-center ">
-          <h1 className=" text-5xl font-bold text-secondary">{page}</h1>
+          <h1
+            ref={headingTextRef}
+            className=" text-5xl font-bold text-secondary"
+          >
+            {page}
+          </h1>
 
-          <div className=" text-lg font-semibold flex items-center gap-1 mt-5">
+          <div
+            ref={subHeadingTextRef}
+            className=" text-lg font-semibold flex items-center gap-1 mt-5"
+          >
             <span>Home</span>
             <ChevronsRight className=" text-secondary font-bold" />
             <span>{page}</span>

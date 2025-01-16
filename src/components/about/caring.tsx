@@ -42,7 +42,7 @@ const Caring = () => {
 Your Whole Family!
 "
       ></HeadingSection>
-      <div className=" grid grid-cols-2 items-center gap-10">
+      <div className=" grid md:grid-cols-2 items-center gap-10">
         <div>
           <h5 className=" font-bold text-lg ">
             Welcome to medipro, where we offer comprehensive medical care
@@ -70,7 +70,10 @@ Your Whole Family!
         <div className=" ">
           {data.map((item, i) => {
             return (
-              <div key={i} className=" items-center gap-5 flex  bg-white p-3  space-y-2 mt-5">
+              <div
+                key={i}
+                className=" items-center gap-5 flex  bg-white p-3  space-y-2 mt-5"
+              >
                 <div>
                   <img src={item.image} alt="" />
                 </div>

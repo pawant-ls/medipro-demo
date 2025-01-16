@@ -3,7 +3,7 @@ import HeadingSection from "../shared/heading-section";
 const AppDownload = () => {
   return (
     <section className=" container my-20 ">
-      <div className=" items-center grid grid-cols-2 gap-5">
+      <div className=" items-center grid md:grid-cols-2 gap-5">
         <HeadingSection
           wfull
           dark

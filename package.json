@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@darkroom.engineering/tempus": "^0.0.46",
     "@gsap/react": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@vis.gl/react-google-maps": "^1.5.0",
@@ -16,6 +17,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.5.1",
     "gsap": "^3.12.5",
+    "lenis": "^1.1.19",
     "lucide-react": "^0.469.0",
     "mapbox-gl": "^3.9.3",
     "maplibre-gl": "^5.0.1",

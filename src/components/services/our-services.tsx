@@ -79,7 +79,7 @@ In Our Community.
 
 "
       ></HeadingSection>
-      <div className=" grid grid-cols-2 2xl:grid-cols-3 gap-5">
+      <div className=" grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
         {data.map((item, i) => (
           <div key={i} className=" text-white p-10 bg-primary  ">
             <div>

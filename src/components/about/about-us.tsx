@@ -2,7 +2,7 @@ import HeadingSection from "../shared/heading-section";
 
 const AboutUsSection = () => {
   return (
-    <section className=" grid grid-cols-2 gap-10 container my-20">
+    <section className=" grid md:grid-cols-2 gap-10 container my-20">
       <HeadingSection
         dark
         title="about us"
@@ -26,7 +26,6 @@ Being Of Family.
           </div>
         </div>
       </HeadingSection>
-
       <div
         style={{
           position: "relative",

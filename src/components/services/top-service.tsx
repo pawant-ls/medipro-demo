@@ -21,7 +21,7 @@ const data = [
 const TopServices = () => {
   return (
     <section className=" my-20 container ">
-      <div className=" grid grid-cols-2 gap-5 s">
+      <div className=" grid md:grid-cols-2 gap-5 s">
         <HeadingSection
           wfull
           dark
@@ -41,7 +41,7 @@ Clinic.
         </div>
       </div>
 
-      <div className=" grid grid-cols-4 gap-5">
+      <div className=" grid mt-5 md:grid-cols-4 gap-5">
         {data.map((item, i) => (
           <div
             className=" p-6 border-2  border-primary flex flex-col items-center gap-5"

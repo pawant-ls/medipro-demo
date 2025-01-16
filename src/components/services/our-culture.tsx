@@ -14,7 +14,7 @@ const images = [
 const OurCulture = () => {
   return (
     <section className="  my-20 ">
-      <div className="container grid grid-cols-2 gap-5 s">
+      <div className="container grid md:grid-cols-2 gap-5 s">
         <HeadingSection
           wfull
           dark

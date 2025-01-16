@@ -5,6 +5,7 @@ import Header from "@/components/shared/header";
 
 import { Figtree } from "next/font/google";
 import Footer from "@/components/shared/footer";
+import Providers from "@/components/shared/providers";
 
 const figtree = Figtree({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -20,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` bg-background ${figtree.className} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

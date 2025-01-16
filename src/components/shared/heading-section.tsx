@@ -1,5 +1,9 @@
+"use client";
 import { ArrowRightCircle } from "lucide-react";
 import CButton from "../button";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const HeadingSection = ({
   title,
@@ -20,13 +24,36 @@ const HeadingSection = ({
   wfull?: boolean;
   center?: boolean;
 }) => {
+  const titleRef = useRef(null);
+  const headingRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from([titleRef.current, headingRef.current, descriptionRef.current], {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
+
   return (
     <div
+      ref={containerRef}
       className={` ${center ? "text-center mx-auto" : ""}  ${
         wfull ? " max-w-2xl" : "max-w-md"
       } `}
     >
       <h4
+        ref={titleRef}
         className={`text-xl uppercase ${
           dark ? " text-secondary" : "text-gray-200"
         }`}
@@ -34,13 +61,17 @@ const HeadingSection = ({
         {title}
       </h4>
       <h1
+        ref={headingRef}
         className={`mt-5 text-2xl md:text-5xl font-semibold ${
           dark ? "text-gray-800" : "text-secondary"
         }`}
       >
         {heading}
       </h1>
-      <h4 className={` ${dark ? " text-gray-600" : "text-gray-300"}  mt-5`}>
+      <h4
+        ref={descriptionRef}
+        className={` ${dark ? " text-gray-600" : "text-gray-300"}  mt-5`}
+      >
         {description}
       </h4>
       {readmore && (
