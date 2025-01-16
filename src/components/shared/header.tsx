@@ -6,20 +6,20 @@ import { useState } from "react";
 const urls = [
   {
     name: "Home",
-    url: "#",
+    url: "/",
   },
   {
     name: "About",
-    url: "#",
+    url: "/about",
   },
   ,
   {
     name: "Services",
-    url: "#",
+    url: "/services",
   },
   {
     name: "Contact",
-    url: "#",
+    url: "/contact",
   },
 ];
 const Header = () => {

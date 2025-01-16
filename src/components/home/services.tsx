@@ -62,7 +62,7 @@ const Services = () => {
   );
 };
 
-const ServicesCard = ({ item }: any) => {
+export const ServicesCard = ({ item }: any) => {
   return (
     <div className=" border border-primary  ">
       <div className=" p-5">
