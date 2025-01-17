@@ -1,5 +1,8 @@
 import { Check } from "lucide-react";
 import HeadingSection from "../shared/heading-section";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const healthCareNeeds = [
   "Mental health Solutions",
   "Rapid Patient Improvement",
@@ -69,24 +72,54 @@ Your Whole Family!
         </div>
         <div className=" ">
           {data.map((item, i) => {
-            return (
-              <div
-                key={i}
-                className=" items-center gap-5 flex  bg-white p-3  space-y-2 mt-5"
-              >
-                <div>
-                  <img src={item.image} alt="" />
-                </div>
-                <div>
-                  <h5 className=" font-bold text-lg ">{item.title}</h5>
-                  <p className=" text-gray-700">{item.description}</p>
-                </div>
-              </div>
-            );
+            return <CaringCard key={i} item={item} />;
           })}
         </div>
       </div>
     </section>
+  );
+};
+
+const CaringCard = ({ item }: { item: any }) => {
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from([imgRef.current, titleRef.current, descriptionRef.current], {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power3.inOut",
+      stagger: 0.2,
+      delay: 0.5,
+      scale: 0.7,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+  return (
+    <div
+      ref={containerRef}
+      className=" items-center gap-5 flex  bg-white p-3  space-y-2 mt-5"
+    >
+      <div ref={imgRef}>
+        <img src={item.image} alt="" />
+      </div>
+      <div>
+        <h5 ref={titleRef} className=" font-bold text-lg ">
+          {item.title}
+        </h5>
+        <p ref={descriptionRef} className=" text-gray-700">
+          {item.description}
+        </p>
+      </div>
+    </div>
   );
 };
 

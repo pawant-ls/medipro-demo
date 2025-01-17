@@ -37,6 +37,7 @@ const HeadingSection = ({
       ease: "power2.out",
       delay: 0.5,
       stagger: 0.2,
+      scale: 0.7,
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 80%",

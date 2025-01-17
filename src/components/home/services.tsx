@@ -89,6 +89,7 @@ export const ServicesCard = ({ item }: any) => {
         ease: "power3.inOut",
         stagger: 0.2,
         delay: 0.5,
+        scale: 0.7,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",

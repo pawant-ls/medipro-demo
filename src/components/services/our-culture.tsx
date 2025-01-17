@@ -13,7 +13,7 @@ const images = [
 ];
 const OurCulture = () => {
   return (
-    <section className="  my-20 ">
+    <section className=" overflow-x-hidden  my-20 ">
       <div className="container grid md:grid-cols-2 gap-5 s">
         <HeadingSection
           wfull
@@ -37,7 +37,12 @@ const OurCulture = () => {
 
       <div className=" my-10 grid grid-cols-5 ">
         {images.map((image, i) => (
-          <img key={i} src={image} alt="" />
+          <img
+            className=" hover:scale-110 transition-all"
+            key={i}
+            src={image}
+            alt=""
+          />
         ))}
       </div>
     </section>

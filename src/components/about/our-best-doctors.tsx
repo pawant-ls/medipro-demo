@@ -1,4 +1,7 @@
+import { useRef } from "react";
 import HeadingSection from "../shared/heading-section";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const data = [
   {
     specialty: "family physician",
@@ -40,23 +43,65 @@ const OurBestDoctors = () => {
 
       <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {data.map((item, i) => (
-          <div key={i}>
-            <img
-              className=" w-full aspect-square object-cover rounded-xl"
-              src={item.image}
-              alt=""
-            />
-            <div>
-              <p className=" mt-3 text-secondary mt-2 capitalize">
-                {item.specialty}
-              </p>
-              <h4 className=" text-lg capitalize font-semibold">{item.name}</h4>
-              <p className="  text-gray-400">{item.description}</p>
-            </div>
-          </div>
+          <DoctorCard key={i} item={item} />
         ))}
       </div>
     </section>
+  );
+};
+
+const DoctorCard = ({ item }: { item: any }) => {
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+  const specialtyRef = useRef(null);
+  const nameRef = useRef(null);
+  const descriptionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(
+      [
+        imgRef.current,
+        specialtyRef.current,
+        nameRef.current,
+        descriptionRef.current,
+      ],
+      {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.inOut",
+        stagger: 0.2,
+        delay: 0.5,
+        scale: 0.8,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+  });
+  return (
+    <div ref={containerRef}>
+      <img
+        ref={imgRef}
+        className="   w-full aspect-square object-cover rounded-xl"
+        src={item.image}
+        alt=""
+      />
+      <div>
+        <p ref={specialtyRef} className=" mt-3 text-secondary mt-2 capitalize">
+          {item.specialty}
+        </p>
+        <h4 ref={nameRef} className=" text-lg capitalize font-semibold">
+          {item.name}
+        </h4>
+        <p ref={descriptionRef} className="  text-gray-400">
+          {item.description}
+        </p>
+      </div>
+    </div>
   );
 };
 
