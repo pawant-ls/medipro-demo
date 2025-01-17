@@ -1,5 +1,6 @@
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
+import HeadingSection from "../shared/heading-section";
 
 const Faqs = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -45,13 +46,15 @@ const Faqs = () => {
 
         <div>
           <div className=" order-2 max-w-md">
-            <h4 className=" text-xl uppercase text-secondary">faqs</h4>
-            <h1
-              className=" mt-5 md:text-5xl font-semibold text-primary
-           "
-            >
-              Consultations with Qualified doctors.
-            </h1>
+            <HeadingSection
+              title="faqs
+"
+              dark
+              heading=" Consultations with Qualified doctors.
+
+
+"
+            ></HeadingSection>
           </div>
 
           <div className=" space-y-5 mt-10 ">
@@ -67,7 +70,9 @@ const Faqs = () => {
                   </h3>
                 </div>
                 {openIndex === index && (
-                  <p className="mt-2 text-gray-600 text-lg font-medium ">{item.answer}</p>
+                  <p className="mt-2 text-gray-600 text-lg font-medium ">
+                    {item.answer}
+                  </p>
                 )}
               </div>
             ))}

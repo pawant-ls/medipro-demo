@@ -1,3 +1,4 @@
+"use client";
 import OurBestDoctors from "../about/our-best-doctors";
 import SharedHeroSection from "../shared/hero";
 import AppDownload from "./app-download";

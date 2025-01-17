@@ -6,7 +6,7 @@ import MouseAnimation from "./mouse";
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Lenis options={{ lerp: 0.15 }} />
+      <Lenis options={{ lerp: 0.1 }} />
       <MouseAnimation />
 
       <GSAP scrollTrigger />

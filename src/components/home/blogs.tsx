@@ -1,4 +1,5 @@
 import React from "react";
+import HeadingSection from "../shared/heading-section";
 
 const BlogPosts = () => {
   const posts = [
@@ -33,15 +34,16 @@ const BlogPosts = () => {
 
   return (
     <section className=" container my-20">
-      <div className=" ">
-        <h4 className=" text-xl uppercase text-secondary">our blog</h4>
-        <h1
-          className=" mt-5 text-3xl md:text-5xl font-semibold text-primary
-           "
-        >
-          Lates News & Articles.
-        </h1>
-      </div>
+      <HeadingSection
+        title="our blog
+"
+        dark
+        heading=" Latest News & Articles.
+
+
+"
+      ></HeadingSection>
+
       <div className=" mt-10 grid md:grid-cols-3 gap-5">
         {posts.map((post) => (
           <div className="" key={post.id}>

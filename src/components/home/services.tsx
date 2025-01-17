@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import HeadingSection from "../shared/heading-section";
 
 const data = [
   {
@@ -46,15 +47,15 @@ const Services = () => {
       <div className=" grid md:grid-cols-3 gap-5 container ">
         <div>
           <div className=" order-2 max-w-md">
-            <h4 className=" text-xl uppercase text-secondary">
-              medical services
-            </h4>
-            <h1
-              className=" mt-5 text-3xl md:text-5xl font-semibold text-primary
-           "
-            >
-              We're Providing Best Services.
-            </h1>
+            <HeadingSection
+              title="medical services
+"
+              dark
+              heading="We're Providing Best Services.
+
+
+"
+            ></HeadingSection>
           </div>
         </div>
 

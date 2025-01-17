@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Star, StarHalf } from "lucide-react";
+import HeadingSection from "../shared/heading-section";
 const data = [
   {
     name: "John Doe",
@@ -52,13 +53,17 @@ const Testimonials = () => {
     >
       <div className=" container mt-5">
         <div className=" order-2 max-w-md">
-          <h4 className=" text-xl uppercase text-secondary">testimonial </h4>
-          <h1
-            className=" mt-5 text-3xl md:text-5xl font-semibold text-gray-100
-           "
-          >
-            What Patients Say About Us.
-          </h1>
+
+        <HeadingSection
+              title="testimonial
+"
+              
+              heading=" What Patients Say About Us.
+
+
+"
+            ></HeadingSection>
+         
         </div>
         <div className=" mt-10">
           <Carousel>

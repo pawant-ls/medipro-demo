@@ -5,6 +5,7 @@ const AboutUsSection = () => {
     <section className=" grid md:grid-cols-2 gap-10 container my-20">
       <HeadingSection
         dark
+        wfull
         title="about us"
         heading="Caring For The Health & Well
 Being Of Family.

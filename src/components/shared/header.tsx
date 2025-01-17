@@ -2,7 +2,10 @@
 import { Calendar, Calendar1, Menu, X } from "lucide-react";
 import CButton from "../button";
 import Logo from "./logo";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import Link from "next/link";
 const urls = [
   {
     name: "Home",
@@ -25,23 +28,39 @@ const urls = [
 const Header = () => {
   const [open, setOpen] = useState(false);
 
+  const logoRef = useRef(null);
+  const btnRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from([logoRef.current, ".header_links", btnRef.current], {
+      opacity: 0,
+      duration: 2,
+      y: 50,
+      ease: "power4.out",
+      stagger: 0.5,
+    });
+  }, []);
+
   return (
     <>
       <header className=" bg-primary border-b border-b-gray-400/20 py-4">
         <div className="container">
           <div className="flex justify-between items-center">
-            <Logo />
+            <div ref={logoRef}>
+              <Logo />
+            </div>
 
             <nav className=" hidden md:flex items-center gap-10">
               <ul className=" text-white flex gap-4">
                 {urls.map((url: any) => (
-                  <li key={url.name}>
-                    <a href={url.url}>{url.name}</a>
+                  <li className="header_links" key={url.name}>
+                    <Link href={url.url}>{url.name}</Link>
                   </li>
                 ))}
               </ul>
-
-              <CButton icon={<Calendar1 />}>Book Now</CButton>
+              <div ref={btnRef}>
+                <CButton icon={<Calendar1 />}>Book Now</CButton>
+              </div>
             </nav>
             <div className=" md:hidden">
               <CButton

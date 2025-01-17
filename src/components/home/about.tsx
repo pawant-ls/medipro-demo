@@ -78,11 +78,8 @@ const About = () => {
               Don't <span className=" font-bold">Hesitate</span> To Contact us
             </h3>
           </div>
-          <div
-            ref={makeAppointmentRef}
-            className=" text-center p-5 bg-black text-white"
-          >
-            Make Appointment
+          <div className=" text-center p-5 bg-black text-white">
+            <p ref={makeAppointmentRef}>Make Appointment</p>
           </div>
         </div>
 

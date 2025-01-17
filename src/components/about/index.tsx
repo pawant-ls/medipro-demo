@@ -1,3 +1,4 @@
+"use client";
 import OpenForAppointment from "../home/open-for-appointment";
 import SharedHeroSection from "../shared/hero";
 import AboutUsSection from "./about-us";

@@ -1,3 +1,8 @@
+import { useRef } from "react";
+import HeadingSection from "../shared/heading-section";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const data = [
   {
     step: "Book an Appointment",
@@ -21,15 +26,16 @@ const HowWeWork = () => {
   return (
     <section className="  container my-20">
       <div className=" grid md:grid-cols-2 items-center gap-10">
-        <div className="  max-w-md">
-          <h4 className=" text-xl uppercase text-secondary">how we work</h4>
-          <h1
-            className=" mt-5 text-3xl md:text-5xl font-semibold text-primary
-           "
-          >
-            A Comprehensive Directory For Your Health Care.{" "}
-          </h1>
-        </div>
+        <HeadingSection
+          title="how we work
+"
+          dark
+          heading=" A Comprehensive Directory For Your Health Care.
+
+
+"
+        ></HeadingSection>
+
         <div className=" flex items-center h-full text-lg text-gray-400">
           <p>
             we are your trusted one-stop destination for all your healthcare
@@ -41,17 +47,55 @@ const HowWeWork = () => {
       </div>
 
       <div className=" mt-10 grid grid-cols-2 gap-10 md:grid-cols-4">
-        {data.map((item) => (
-          <div
-            key={item.step}
-            className=" flex-col  mt-5 flex gap-3 items-center"
-          >
-            <img src={item.image} alt="" />
-            <p className=" text-xl text-center  font-semibold text-gray-800">{item.step}</p>
-          </div>
+        {data.map((item, i) => (
+          <HowWeWorkImageCard key={i} item={item} />
         ))}
       </div>
     </section>
+  );
+};
+
+const HowWeWorkImageCard = ({
+  item,
+}: {
+  item: {
+    step: string;
+    image: string;
+  };
+}) => {
+  const containerRef = useRef(null);
+  const imageRef = useRef(null);
+  const stepRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from([imageRef.current, stepRef.current], {
+      opacity: 0,
+      y: 50,
+      duration: 2,
+      ease: "power3.inOut",
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+  return (
+    <div
+      ref={containerRef}
+      key={item.step}
+      className=" flex-col  mt-5 flex gap-3 items-center"
+    >
+      <img ref={imageRef} src={item.image} alt="" />
+      <p
+        ref={stepRef}
+        className=" text-xl text-center  font-semibold text-gray-800"
+      >
+        {item.step}
+      </p>
+    </div>
   );
 };
 
