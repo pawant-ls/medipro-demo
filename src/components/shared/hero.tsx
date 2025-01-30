@@ -36,11 +36,11 @@ const SharedHeroSection = ({ page }: { page: string }) => {
       //   }}
       className=" relative bg-primary text-white "
     >
-      <div className=" container py-32  flex text-center items-center justify-center">
+      <div className=" container py-36  flex text-center items-center justify-center">
         <div className=" z-10 relative  flex flex-col items-center justify-center ">
           <h1
             ref={headingTextRef}
-            className=" text-5xl font-bold text-secondary"
+            className=" text-6xl font-bold text-secondary"
           >
             {page}
           </h1>

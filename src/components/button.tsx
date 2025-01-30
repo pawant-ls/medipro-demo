@@ -13,7 +13,7 @@ const CButton = ({
   return (
     <Button
       {...props}
-      className=" items-center text-secondary border-secondary border-2 rounded-full"
+      className=" hover:bg-secondary hover:text-primary transition-all text-lg py-5 px-6 items-center text-secondary border-secondary border-2 rounded-full"
     >
       {children}
       {icon}

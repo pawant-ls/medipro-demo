@@ -99,25 +99,17 @@ export const ServicesCard = ({ item }: any) => {
   const btnRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(
-      [
-        clinicRef.current,
-        descriptionRef.current,
-        btnRef.current,
-      ],
-      {
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
+    gsap.from([clinicRef.current, descriptionRef.current, btnRef.current], {
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "bottom 80%",
+      },
+    });
   });
   return (
     <div ref={containerRef} className=" text-white p-10 bg-primary  ">

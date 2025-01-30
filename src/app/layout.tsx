@@ -23,7 +23,10 @@ export default function RootLayout({
       <body className={` bg-background ${figtree.className} antialiased`}>
         <Providers>
           <Header />
+          <div className=" mt-10">
+
           {children}
+          </div>
           <Footer />
         </Providers>
       </body>

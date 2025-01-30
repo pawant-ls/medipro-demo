@@ -3,6 +3,7 @@ import { APIProvider } from "@vis.gl/react-google-maps";
 import SharedHeroSection from "../shared/hero";
 import CustomMap from "./map";
 import ContactForm from "./form";
+import HeadingSection from "../shared/heading-section";
 const data = [
   {
     type: "Help Line",
@@ -20,7 +21,7 @@ const data = [
 
 const ContactUsPage = () => {
   return (
-    <section>
+    <main>
       <SharedHeroSection page="Contact Us"></SharedHeroSection>
       <section
         style={{
@@ -30,7 +31,7 @@ const ContactUsPage = () => {
         }}
         className=" relative w-full h-[400px]"
       >
-        <div className=" bg-primary  text-white absolute left-1/2 -translate-x-1/2 bottom-10 p-5 grid md:grid-cols-3 gap-5 ">
+        <div className=" bg-primary  text-white absolute left-1/2 -translate-x-1/2 -bottom-10 p-5 grid md:grid-cols-3 gap-5 ">
           {data.map((item, i) => (
             <div key={i} className=" flex flex-col md:items-center gap-2">
               <span className=" text-secondary  md:text-xl font-semibold">
@@ -42,8 +43,10 @@ const ContactUsPage = () => {
           ))}
         </div>
       </section>
+
+    
       <ContactForm />
-    </section>
+    </main>
   );
 };
 

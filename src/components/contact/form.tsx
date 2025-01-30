@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CButton from "../button";
+import HeadingSection from "../shared/heading-section";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -25,8 +26,18 @@ const ContactForm = () => {
   };
 
   return (
-    <section className=" my-20 ">
-      <div className="w-full max-w-4xl mx-auto p-10 bg-primary">
+    <section className=" my-28 ">
+      <HeadingSection
+        title="fill the form
+"
+        dark
+        center
+        heading=" Contact Form
+
+
+"
+      ></HeadingSection>
+      <div className="w-full max-w-5xl mx-auto p-10 bg-primary">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">

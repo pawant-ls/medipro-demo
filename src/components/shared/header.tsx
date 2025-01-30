@@ -15,10 +15,14 @@ const urls = [
     name: "About",
     url: "/about",
   },
-  ,
+
   {
     name: "Services",
     url: "/services",
+  },
+  {
+    name: "Blogs",
+    url: "/blogs",
   },
   {
     name: "Contact",
@@ -43,7 +47,7 @@ const Header = () => {
 
   return (
     <>
-      <header className=" bg-primary border-b border-b-gray-400/20 py-4">
+      <header className=" z-[999]  fixed top-0 inset-x-0 bg-primary border-b border-b-gray-400/20 py-4">
         <div className="container">
           <div className="flex justify-between items-center">
             <div ref={logoRef}>
@@ -53,7 +57,7 @@ const Header = () => {
             <nav className=" hidden md:flex items-center gap-10">
               <ul className=" text-white flex gap-4">
                 {urls.map((url: any) => (
-                  <li className="header_links" key={url.name}>
+                  <li className="header_links text-lg" key={url.name}>
                     <Link href={url.url}>{url.name}</Link>
                   </li>
                 ))}
