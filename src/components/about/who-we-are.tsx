@@ -9,6 +9,8 @@ const WhoWeAre = () => {
         </div>
         <div>
           <HeadingSection
+            watchMore
+            wfull
             title="who we are"
             heading="Improving The Quality Of
 Your Life Through Better

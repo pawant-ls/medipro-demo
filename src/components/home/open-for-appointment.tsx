@@ -53,7 +53,10 @@ const OpenForAppointment = () => {
             alt=""
           />
           <div className=" text-white flex-1">
-            <h1 ref={headingRef} className=" text-4xl font-semibold text-white">
+            <h1
+              ref={headingRef}
+              className=" text-2xl md:text-5xl font-semibold text-white"
+            >
               Open for Appointment
             </h1>
             <p ref={descriptionRef} className=" text-lg mt-2">

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import HeadingSection from "../shared/heading-section";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 const data = [
   {
     specialty: "family physician",
@@ -75,8 +76,8 @@ const DoctorCard = ({ item }: { item: any }) => {
         scale: 0.8,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top center",
-          end: "bottom center",
+          start: "top 80%",
+          end: "bottom 80%",
           scrub: true,
         },
       }
@@ -84,12 +85,28 @@ const DoctorCard = ({ item }: { item: any }) => {
   });
   return (
     <div ref={containerRef}>
-      <img
-        ref={imgRef}
-        className="   w-full aspect-square object-cover rounded-xl"
-        src={item.image}
-        alt=""
-      />
+      <div className=" overflow-hidden group relative" ref={imgRef}>
+        <img
+          className="   w-full aspect-square object-cover rounded-xl"
+          src={item.image}
+          alt=""
+        />
+
+        <div className=" cursor-pointer flex group-hover:bottom-5 items-center gap-2 absolute scale-150 group-hover:scale-100 -bottom-14 transition-all right-1/2 translate-x-1/2 ">
+          <div className=" bg-primary text-white p-2 rounded-xl inline-block">
+            <Instagram />
+          </div>
+          <div className=" bg-primary text-white p-2 rounded-xl inline-block">
+            <Linkedin />
+          </div>
+          <div className=" bg-primary text-white p-2 rounded-xl inline-block">
+            <Facebook />
+          </div>
+          <div className=" bg-primary text-white p-2 rounded-xl inline-block">
+            <Twitter />
+          </div>
+        </div>
+      </div>
       <div>
         <p ref={specialtyRef} className=" mt-3 text-secondary mt-2 capitalize">
           {item.specialty}

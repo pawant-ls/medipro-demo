@@ -1,8 +1,9 @@
-import { Check } from "lucide-react";
+import { ArrowRightCircle, Check } from "lucide-react";
 import HeadingSection from "../shared/heading-section";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import CButton from "../button";
 const healthCareNeeds = [
   "Mental health Solutions",
   "Rapid Patient Improvement",
@@ -36,23 +37,25 @@ const data = [
 const Caring = () => {
   return (
     <section className=" container my-32">
-      <HeadingSection
-        wfull
-        dark
-        title="caring for the health of you and your family.
+      <div>
+        <HeadingSection
+          wfull
+          dark
+          title="caring for the health of you and your family.
 "
-        heading="We Provide All Aspects Of Medical Practice For
+          heading="We Provide All Aspects Of Medical Practice For
 Your Whole Family!
 "
-      ></HeadingSection>
+        ></HeadingSection>
+      </div>
       <div className=" grid md:grid-cols-2 items-center gap-10">
         <div>
-          <h5 className=" font-bold text-lg ">
+          <h5 className=" font-bold text-2xl ">
             Welcome to medipro, where we offer comprehensive medical care
             tailored to every member of your family.
           </h5>
 
-          <p className=" text-gray-700">
+          <p className=" mt-5 text-gray-700">
             Our dedicated team of healthcare professionals is committed to
             providing you and your loved ones with personalized and
             compassionate healthcare services. We understand the importance of
@@ -65,10 +68,14 @@ Your Whole Family!
                 <div className="  rounded-full p-1   bg-secondary">
                   <Check size={16} className=" text-white" />
                 </div>
-                <p className=" text-gray-700">{need}</p>
+                <p className=" text-gray-700 text-lg">{need}</p>
               </div>
             ))}
           </div>
+
+          <CButton icon={<ArrowRightCircle />} className=" bg-background  mt-5">
+            Get Started
+          </CButton>
         </div>
         <div className=" ">
           {data.map((item, i) => {
@@ -106,7 +113,7 @@ const CaringCard = ({ item }: { item: any }) => {
   return (
     <div
       ref={containerRef}
-      className=" items-center gap-5 flex  bg-white p-3  space-y-2 mt-5"
+      className=" items-center gap-5 flex  bg-white p-5  space-y-2 mt-5"
     >
       <div ref={imgRef}>
         <img src={item.image} alt="" />
@@ -115,7 +122,7 @@ const CaringCard = ({ item }: { item: any }) => {
         <h5 ref={titleRef} className=" font-bold text-lg ">
           {item.title}
         </h5>
-        <p ref={descriptionRef} className=" text-gray-700">
+        <p ref={descriptionRef} className=" mt-3 text-gray-700">
           {item.description}
         </p>
       </div>

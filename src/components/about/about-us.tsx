@@ -19,7 +19,7 @@ const AboutUsSection = () => {
     });
   }, []);
   return (
-    <section className=" grid md:grid-cols-2 gap-10 container my-20">
+    <section className=" grid md:grid-cols-2 gap-10 container my-20 md:my-36">
       <HeadingSection
         dark
         wfull

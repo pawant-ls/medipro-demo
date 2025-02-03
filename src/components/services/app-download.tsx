@@ -3,7 +3,7 @@ import HeadingSection from "../shared/heading-section";
 const AppDownload = () => {
   return (
     <section className=" container my-20 ">
-      <div className=" items-center grid md:grid-cols-2 gap-5">
+      <div className=" items-center grid md:grid-cols-2 justify-between gap-5">
         <HeadingSection
           wfull
           dark
@@ -23,7 +23,7 @@ Get 100$ Healthcase.
             <img src="images/app-store-img.png" alt="" />
           </div>
         </HeadingSection>
-        <div>
+        <div className=" flex justify-end">
           <img src="images/app-download.png" alt="" />
         </div>
       </div>

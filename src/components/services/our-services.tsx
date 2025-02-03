@@ -1,9 +1,10 @@
-import { ArrowRightCircle } from "lucide-react";
+import { ArrowRightCircle, Check } from "lucide-react";
 import HeadingSection from "../shared/heading-section";
 import CButton from "../button";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Image from "next/image";
 const data = [
   {
     clinic: "cardiology",
@@ -15,6 +16,7 @@ const data = [
       "Arrhythmia Management",
     ],
     action: "Read More",
+    icon: "/images/icon-service-page-1.svg",
   },
   {
     clinic: "pathology",
@@ -22,6 +24,7 @@ const data = [
       "Comprehensive tests to analyze body fluids, aiding in the diagnosis and monitoring of organ function and metabolic disorders.",
     services: ["Molecular Pathology", "Cytogenetics", "Immunology"],
     action: "Read More",
+    icon: "/images/icon-service-page-2.svg",
   },
   {
     clinic: "laboratory analysis",
@@ -33,6 +36,7 @@ const data = [
       "Advanced Diagnostic Tests",
     ],
     action: "Read More",
+    icon: "/images/icon-service-page-3.svg",
   },
   {
     clinic: "pediatric",
@@ -44,6 +48,7 @@ const data = [
       "Developmental Evaluations",
     ],
     action: "Read More",
+    icon: "/images/icon-service-page-4.svg",
   },
   {
     clinic: "cardiac",
@@ -55,6 +60,7 @@ const data = [
       "Lipid Management",
     ],
     action: "Read More",
+    icon: "/images/icon-service-page-5.svg",
   },
   {
     clinic: "neurology",
@@ -66,6 +72,7 @@ const data = [
       "Neurological Examinations",
     ],
     action: "Read More",
+    icon: "/images/icon-service-page-6.svg",
   },
 ];
 
@@ -114,17 +121,28 @@ export const ServicesCard = ({ item }: any) => {
   return (
     <div ref={containerRef} className=" text-white p-10 bg-primary  ">
       <div>
-        <h4 ref={clinicRef} className=" text-2xl   capitalize">
+        <div>
+          <Image
+            src={item.icon}
+            width={80}
+            height={80}
+            alt={item.clinic + "icon"}
+          />
+        </div>
+        <h4 ref={clinicRef} className=" mt-3 text-2xl   capitalize">
           {item.clinic}
         </h4>
         <p ref={descriptionRef} className=" mt-5 text-gray-400">
           {item.description}
         </p>
       </div>
-      <div className=" mt-5">
+      <div className=" space-y-2 mt-5">
         {item.services.map((service: any, i: number) => (
-          <div className="" key={i}>
-            <p className=" services__card">{service}</p>
+          <div className=" flex items-center gap-2  " key={i}>
+            <div className=" bg-secondary p-1 rounded-full text-primary inline-block">
+              <Check size={16} />
+            </div>
+            <p className=" font-bold text-lg services__card">{service}</p>
           </div>
         ))}
       </div>

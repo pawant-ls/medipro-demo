@@ -20,7 +20,7 @@ export default {
           DEFAULT: "2rem",
         },
         screens: {
-          xl: "1300px",
+          xl: "1320px",
         },
       },
     },

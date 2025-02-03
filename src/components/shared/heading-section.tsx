@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRightCircle } from "lucide-react";
+import { ArrowRightCircle, Play } from "lucide-react";
 import CButton from "../button";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -14,6 +14,7 @@ const HeadingSection = ({
   readmore = false,
   wfull = false,
   center = false,
+  watchMore = false,
 }: {
   title: string;
   heading: string;
@@ -23,6 +24,7 @@ const HeadingSection = ({
   readmore?: boolean;
   wfull?: boolean;
   center?: boolean;
+  watchMore?: boolean;
 }) => {
   const titleRef = useRef(null);
   const headingRef = useRef(null);
@@ -50,7 +52,7 @@ const HeadingSection = ({
     <div
       ref={containerRef}
       className={` ${center ? "text-center mx-auto" : ""}  ${
-        wfull ? " max-w-2xl" : "max-w-md"
+        wfull ? " max-w-3xl" : "max-w-md"
       } `}
     >
       <h4
@@ -75,11 +77,17 @@ const HeadingSection = ({
       >
         {description}
       </h4>
-      {readmore && (
-        <div className=" mt-5 ">
-          <CButton icon={<ArrowRightCircle />}>Read More</CButton>
+      {
+        <div className=" gap-5 flex items-center mt-5 ">
+          {readmore && <CButton icon={<ArrowRightCircle />}>Read More</CButton>}
+
+          {watchMore && (
+            <CButton white icon={<Play />} className=" ml-5">
+              Watch Video
+            </CButton>
+          )}
         </div>
-      )}
+      }
 
       <div>
         <div className=" mt-10">{children}</div>

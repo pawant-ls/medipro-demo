@@ -37,6 +37,8 @@ const Hero = () => {
             believe that everyone deserves access to excellent medical care
             without compromising on quality."
           readmore
+          watchMore
+
         ></HeadingSection>
 
         <div
